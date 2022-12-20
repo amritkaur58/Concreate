@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp">
+
+            <RelativeLayout
+                android:id="@+id/rlHeader"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <ImageView
+                    android:id="@+id/imgBack"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="13dp"
+                    android:src="@drawable/backarrow" />
+
+                <TextView
+                    android:id="@+id/titleTop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/completedailyreport"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlHeader"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="40dp"
+                android:backgroundTint="@color/blue"
+                android:max="150"
+                android:progress="40" />
+
+            <TextView
+                android:id="@+id/txtDailyConditions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/seekBar"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="20dp"
+                android:text="@string/dailyconditions"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:id="@+id/rlTemperature"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/txtDailyConditions"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_completedailyreport">
+
+                <TextView
+                    android:id="@+id/txtTemperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/temperature"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tempET"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/txtTemperature"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:maxLines="1"
+                    android:paddingStart="27dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="20dp"
+                    android:text="32"
+                    android:textColor="@color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlWeather"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_below="@+id/rlTemperature"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_email">
+
+                <TextView
+                    android:id="@+id/txtWeather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/weather"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp" />
+
+                <Spinner
+                    android:id="@+id/weatherSP"
+                    style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/txtWeather"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/white"
+                    android:hint="@string/yes"
+                    android:popupBackground="@color/white"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="13sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/weatherTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/txtWeather"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/downarrow"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/cityRL"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_below="@+id/rlWeather"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_email">
+
+                <TextView
+                    android:id="@+id/cityTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/city_name"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/cityName"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/cityTV"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSave"
+        android:layout_width="130dp"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/bg_btn_voicetext"
+        android:text="@string/next"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black" />
+
+</RelativeLayout>

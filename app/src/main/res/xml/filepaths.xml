@@ -1,0 +1,8 @@
+<paths>
+    <external-path
+        name="external_files"
+        path="." />
+    <external-cache-path
+        name="cache"
+        path="camera" />
+</paths>

@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp">
+
+            <RelativeLayout
+                android:id="@+id/rlHeader"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <ImageView
+                    android:id="@+id/imgBack"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="13dp"
+                    android:src="@drawable/backarrow" />
+
+                <com.dailyreporting.app.utils.AutoResizeText
+                    android:id="@+id/titleTop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/completedailyreport"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlHeader"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="40dp"
+                android:backgroundTint="@color/blue"
+                android:max="150" />
+
+            <TextView
+                android:id="@+id/txtGeneralInfo"
+                android:layout_width="100dp"
+                android:layout_height="55dp"
+                android:layout_below="@+id/seekBar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-13dp"
+                android:paddingTop="20dp"
+                android:text="@string/generalinfo"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+            <RelativeLayout
+                android:id="@+id/rlProjectNumber"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/txtGeneralInfo"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_completedailyreport">
+
+                <TextView
+                    android:id="@+id/txtProjectNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/projectnumber"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/projectNumberET"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/txtProjectNumber"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint="11"
+                    android:maxLines="1"
+                    android:paddingStart="27dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlProjectName"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/rlProjectNumber"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/bg_completedailyreport">
+
+                <TextView
+                    android:id="@+id/txtProjectName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/projectname"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/projectNoTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/txtProjectName"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint="11"
+                    android:maxLines="1"
+                    android:paddingStart="27dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlFieldUser"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/rlProjectName"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/bg_completedailyreport">
+
+                <TextView
+                    android:id="@+id/txtFieldUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/fielduser"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/userNameET"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/txtFieldUser"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint=""
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingStart="27dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlDailyReport"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/rlFieldUser"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/bg_completedailyreport">
+
+                <TextView
+                    android:id="@+id/txtDailyReport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/dailyreport"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/txtDailyReport"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint="2"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:paddingStart="27dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlDay"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/rlFieldUser"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/bg_completedailyreport">
+
+                <TextView
+                    android:id="@+id/txtDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/day"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/txtDay"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint="2"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:paddingStart="27dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlDate"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/rlFieldUser"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/bg_completedailyreport">
+
+                <TextView
+                    android:id="@+id/txtDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/date"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/dateET"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/txtDate"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint="@string/demo_date"
+                    android:maxLines="1"
+                    android:paddingStart="27dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSave"
+        android:layout_width="130dp"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/bg_btn_voicetext"
+        android:text="@string/next"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black" />
+
+</RelativeLayout>

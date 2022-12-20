@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnSave"
+        android:layout_marginBottom="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp">
+
+            <RelativeLayout
+                android:id="@+id/rlHeader"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <ImageView
+                    android:id="@+id/imgBack"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="13dp"
+                    android:src="@drawable/backarrow" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/dailyactivities"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlHeader"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="40dp"
+                android:backgroundTint="@color/blue"
+                android:max="150" />
+
+            <TextView
+                android:id="@+id/txtDailyVisit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/seekBar"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="20dp"
+                android:text="@string/dailyvisit"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:id="@+id/rlReasonForVisit"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/txtDailyVisit"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_email">
+
+                <TextView
+                    android:id="@+id/txtReasonForVisit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/reasonforvisit"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/txtReasonForVisit"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint="@string/purchase"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingLeft="27dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlVisitorName"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/rlReasonForVisit"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_email">
+
+                <TextView
+                    android:id="@+id/txtVisitorName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/visitorname"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/txtVisitorName"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint="@string/city"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingStart="27dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlCompanyName"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/rlVisitorName"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_email">
+
+                <TextView
+                    android:id="@+id/txtCompanyName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/timeofarrival"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/txtCompanyName"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint="08:00 am"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingStart="27dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlTitle"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/rlCompanyName"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_email">
+
+                <TextView
+                    android:id="@+id/txtTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/title"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/txtTitle"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint="Manager"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingStart="27dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlTimeOfArrival"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/rlTitle"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_email">
+
+                <TextView
+                    android:id="@+id/txtTimeOfArrival"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/timeofarrival"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/txtTimeOfArrival"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint="08:00 am"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:paddingStart="27dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlTimeOfDeparture"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/rlTimeOfArrival"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_email">
+
+                <TextView
+                    android:id="@+id/txtTimeOfDeparture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/timeofdeparture"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/txtTimeOfDeparture"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint="06:00 pm"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:paddingLeft="27dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlComplaint"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/rlTimeOfDeparture"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_email">
+
+                <TextView
+                    android:id="@+id/txtComplaint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/complaint"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/txtComplaint"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint="No"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:paddingStart="27dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSave"
+        android:layout_width="130dp"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/bg_login"
+        android:text="@string/submit"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"/>
+
+</RelativeLayout>

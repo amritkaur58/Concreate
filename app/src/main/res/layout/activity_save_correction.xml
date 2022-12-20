@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="20dp" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar">
+
+        <RelativeLayout
+            android:id="@+id/rlMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp">
+
+            <RelativeLayout
+                android:id="@+id/rlEmail"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/bg_date">
+
+                <TextView
+                    android:id="@+id/txtDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="30dp"
+                    android:paddingTop="7dp"
+                    android:text="@string/day_value"
+                    android:textColor="@color/blue"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:ignore="RtlSymmetry" />
+
+                <TextView
+                    android:id="@+id/dateTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtDay"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="10dp"
+                    android:paddingStart="30dp"
+                    android:text="@string/day"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/txtCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:paddingEnd="14dp"
+                    android:text="@string/city"
+                    android:textColor="#888282"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rlActivityName"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_below="@+id/rlEmail"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_email">
+
+                <TextView
+                    android:id="@+id/visitTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/code"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/codeET"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/visitTitle"
+                    android:layout_marginTop="4dp"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint=""
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingStart="25dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal"
+                    android:visibility="gone" />
+
+                <Spinner
+                    android:id="@+id/spinnerCode"
+                    style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/visitTitle"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/white"
+                    android:hint="@string/yes"
+                    android:popupBackground="@color/white"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="13sp"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:layout_toStartOf="@+id/refreshIV"
+                    android:src="@drawable/downarrow" />
+
+                <ImageView
+                    android:id="@+id/refreshIV"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/ic_refresh"
+                    android:visibility="visible" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlCode"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@+id/rlActivityName"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_email">
+
+                <TextView
+                    android:id="@+id/reasonTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/complaint_after_correction"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+
+                <Spinner
+                    android:id="@+id/complaintSP"
+                    style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/reasonTV"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/white"
+                    android:hint="@string/yes"
+                    android:popupBackground="@color/white"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="15sp"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/downarrow" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlLocation"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_below="@+id/rlCode"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_email">
+
+                <TextView
+                    android:id="@+id/txtLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/location"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+
+                <Spinner
+                    android:id="@+id/locationSp"
+                    style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/txtLocation"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/white"
+                    android:hint="@string/yes"
+                    android:popupBackground="@color/white"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="13sp"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/downarrow" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/companyNameRL"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_below="@+id/rlLocation"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_email">
+
+                <TextView
+                    android:id="@+id/companyNameTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/visual_inspection"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spinnerInspection"
+                    style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/companyNameTV"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/white"
+                    android:hint="@string/yes"
+                    android:popupBackground="@color/white"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="15sp"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/downarrow" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/personNameRL"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@+id/companyNameRL"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_email">
+
+                <TextView
+                    android:id="@+id/personNameTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/person_name"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/personNameET"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/personNameTv"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:maxLines="1"
+                    android:paddingStart="25dp"
+                    android:paddingEnd="20dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/visitRL"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@+id/personNameRL"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_email">
+
+                <TextView
+                    android:id="@+id/visitTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/visit_reason"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/visitET"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/visitTV"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:maxLines="1"
+                    android:paddingStart="25dp"
+                    android:paddingEnd="20dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/visitRL"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/white_rounded_corner"
+                card_view:cardBackgroundColor="@android:color/transparent"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardUseCompatPadding="true">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="@drawable/white_rounded_corner"
+                    card_view:cardBackgroundColor="#fff"
+                    card_view:cardCornerRadius="10dp"
+                    card_view:cardElevation="3dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <EditText
+                            android:id="@+id/etNote"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_above="@+id/voiceRL"
+                            android:layout_alignParentTop="true"
+                            android:layout_margin="20dp"
+                            android:background="@android:color/transparent"
+                            android:gravity="top"
+                            android:hint="@string/add_description"
+                            android:textColor="@android:color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+                            android:id="@+id/voiceRL"
+                            android:layout_width="130dp"
+                            android:layout_height="44dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_gravity="right|bottom"
+                            android:background="@drawable/bg_btn_addnotevoice">
+
+                            <ImageView
+                                android:id="@+id/imgVoice"
+                                android:layout_width="26dp"
+                                android:layout_height="29dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="10dp"
+                                android:src="@drawable/voice" />
+
+                            <TextView
+                                android:id="@+id/voiceTV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toEndOf="@+id/imgVoice"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:singleLine="true"
+                                android:text="@string/voicetext"
+                                android:textColor="@android:color/white"
+                                android:textSize="10sp" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+                android:id="@+id/rlAddPictures"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cardViewMain"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/addPicTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="6dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/addpictures"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:id="@+id/countRL"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/bg_addactivity_circle"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="1"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rlAddPictures" />
+
+            <RelativeLayout
+                android:id="@+id/rlCancelSave"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/recyclerView"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnCancel"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="25dp"
+                    android:background="@drawable/bg_btn_cancel"
+                    android:text="@string/cancel_string"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSave"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/bg_btn_save"
+                    android:text="@string/save_string"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>

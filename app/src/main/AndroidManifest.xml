@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.dailyreporting.app">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application xmlns:tools="http://schemas.android.com/tools"
+        android:name=".utils.MyApplication"
+        android:allowBackup="false"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/app_icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DailyReportingApp"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup">
+        <activity android:name=".activities.PermissionAboveMarshmellow"/>
+        <activity android:name=".activities.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.DailyReportActivity" />
+        <activity android:name=".activities.MainActivity" />
+        <activity android:name=".activities.SubContractDailyCondtionActivity" />
+
+        <meta-data
+            android:name="DATABASE"
+            android:value="com.dailyreporting.database.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="27" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.dailyreporting" />
+
+        <activity android:name=".activities.DailyActivitiesActivity" />
+        <activity android:name=".activities.ListActivity" />
+        <activity android:name=".activities.SettingsActivity" />
+        <activity android:name=".activities.TakePictureActivity" />
+        <activity android:name=".activities.DailyFolderActivity" />
+        <activity android:name=".activities.SaveDailyFolderActivity"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".activities.SavePictureActivity" />
+        <activity android:name=".activities.SubContractorActivity" />
+        <activity android:name=".activities.CorrectionsActivity" />
+        <activity android:name=".activities.VisitsActivity" />
+        <activity android:name=".activities.CompleteDailyReportActivity" />
+        <activity android:name=".activities.DailyConditionsActivity" />
+        <activity android:name=".activities.SaveActivityType" />
+        <activity android:name=".activities.AddActivitity"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".activities.SaveVisitLog"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.SaveCorrections"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".activities.DailyVisitActivity" />
+        <activity
+            android:name=".activities.AddSubContractorActivity"
+            android:windowSoftInputMode="stateHidden" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
+        <receiver android:name= ".Services.MyNotificationPublisher" />
+    </application>
+
+</manifest>

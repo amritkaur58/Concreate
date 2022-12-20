@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp">
+
+            <RelativeLayout
+                android:id="@+id/rlHeader"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <ImageView
+                    android:id="@+id/imgMenuIcon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="13dp"
+                    android:src="@drawable/backarrow" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/createnote"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlEmail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/rlHeader"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/bg_date">
+
+                <TextView
+                    android:id="@+id/txtDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="30dp"
+                    android:paddingTop="7dp"
+                    android:text="@string/day"
+                    android:textColor="@color/purple"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:paddingEnd="14dp"
+                    android:text="@string/city"
+                    android:textColor="#888282"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlEmail"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/white_rounded_corner"
+                card_view:cardBackgroundColor="@android:color/transparent"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardUseCompatPadding="true">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:background="@drawable/white_rounded_corner"
+                    card_view:cardBackgroundColor="#fff"
+                    card_view:cardCornerRadius="10dp"
+                    card_view:cardElevation="3dp">
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/typehere"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp" />
+                </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+                android:id="@+id/rlVoiceToText"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@+id/cardViewMain"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_btn_voicetext">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:layout_toStartOf="@+id/txtVoiceToText"
+                    android:src="@mipmap/ic_launcher" />
+
+                <TextView
+                    android:id="@+id/txtVoiceToText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/voicetext" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="150dp"
+                android:layout_height="45dp"
+                android:layout_below="@+id/rlVoiceToText"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_email"
+                android:text="@string/cancel_string"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="150dp"
+                android:layout_height="45dp"
+                android:layout_below="@+id/rlVoiceToText"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_row_dailyreport"
+                android:text="@string/save_string"
+                android:textAllCaps="false" />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,1 @@
+alter table ACTIVITY_MODEL add VERSION_UPDATE TEXT;

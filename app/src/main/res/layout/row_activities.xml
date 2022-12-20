@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/bg_activities">
+
+        <ImageView
+            android:id="@+id/imgActivity"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:padding="15dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/txtActivityNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/imgActivity"
+            android:paddingStart="10dp"
+            android:paddingTop="15dp"
+            android:text="@string/activitynumber"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/txtActivityNumber"
+            android:paddingStart="10dp"
+            android:paddingTop="15dp"
+            android:text="20 Files"
+            android:textColor="@color/blue"
+            android:textSize="12sp"
+            android:textStyle="normal" />
+
+        <RelativeLayout
+            android:id="@+id/rlDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtActivityNumber"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/imgActivity">
+
+            <TextView
+                android:id="@+id/txtDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_toStartOf="@+id/imgedit"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:paddingEnd="15dp"
+                android:singleLine="true"
+                android:text="@string/dummytext" />
+
+            <ImageView
+                android:id="@+id/imgDelete"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <ImageView
+                android:id="@+id/imgedit"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="20dp"
+                android:layout_toStartOf="@+id/imgDelete"
+                android:src="@mipmap/ic_launcher" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txtTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlDescription"
+            android:layout_toEndOf="@+id/imgActivity"
+            android:paddingStart="10dp"
+            android:singleLine="true"
+            android:text="@string/time"
+            android:textColor="@color/light_grey"
+            android:textSize="13sp" />
+    </RelativeLayout>
+</RelativeLayout>

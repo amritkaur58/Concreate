@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp">
+
+            <RelativeLayout
+                android:id="@+id/rlHeader"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <ImageView
+                    android:id="@+id/imgBack"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="13dp"
+                    android:src="@drawable/backarrow" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/completedailyreport"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+            <!-- <ProgressBar
+                 android:id="@+id/simpleProgressBar"
+                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@+id/rlHeader"
+                 android:layout_marginLeft="40dp"
+                 android:layout_marginTop="20dp"
+                 android:layout_marginRight="40dp"
+                 android:max="100"
+                 android:progress="50" />-->
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlHeader"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="40dp"
+                android:backgroundTint="@color/blue"
+                android:max="150"
+                android:progress="40" />
+
+
+            <TextView
+                android:id="@+id/txtDailyActivities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/seekBar"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="20dp"
+                android:text="@string/dailyactivities"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:id="@+id/rlDailyActivities"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/txtDailyActivities"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_email">
+
+                <TextView
+                    android:id="@+id/txtActivityName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/activityname"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/etActivityName"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/txtActivityName"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint=""
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingStart="27dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlCode"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/rlDailyActivities"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_email">
+
+                <TextView
+                    android:id="@+id/txtCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/code"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/etCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/txtCode"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint=""
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:paddingStart="27dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlLocation"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/rlCode"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_email">
+
+                <TextView
+                    android:id="@+id/txtLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/location"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/etLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/txtLocation"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint=""
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingStart="27dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlTaskCompleted"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@+id/rlLocation"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_email">
+
+                <TextView
+                    android:id="@+id/txtTaskCompleted"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/taskcompleted"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp" />
+
+
+                <Spinner
+                    android:id="@+id/spinnerTaskCompleted"
+                    style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/txtTaskCompleted"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/white"
+                    android:hint="@string/yes"
+                    android:popupBackground="@color/white"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="15sp"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/downarrow" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlComplaint"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@+id/rlTaskCompleted"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_email">
+
+                <TextView
+                    android:id="@+id/txtComplaint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/complaint"
+                    android:textColor="@color/light_grey"
+                    android:textSize="13sp" />
+
+
+                <Spinner
+                    android:id="@+id/spinnerComplaint"
+                    style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/txtComplaint"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/white"
+                    android:hint="@string/yes"
+                    android:popupBackground="@color/white"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="15sp"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/downarrow" />
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlComplaint"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/white_rounded_corner"
+                card_view:cardBackgroundColor="@android:color/transparent"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardUseCompatPadding="true">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="@drawable/white_rounded_corner"
+                    card_view:cardBackgroundColor="#fff"
+                    card_view:cardCornerRadius="10dp"
+                    card_view:cardElevation="3dp">
+
+                    <EditText
+                        android:id="@+id/etNote"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/addnote"
+                        android:textColor="@android:color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="130dp"
+                        android:layout_height="44dp"
+                        android:layout_gravity="right|bottom"
+                        android:background="@drawable/bg_btn_addnotevoice">
+
+                        <ImageView
+                            android:id="@+id/imgVoice"
+                            android:layout_width="26dp"
+                            android:layout_height="29dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/voice" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@+id/imgVoice"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:singleLine="true"
+                            android:text="@string/voicetext"
+                            android:textColor="@android:color/white"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+                android:id="@+id/rlSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_below="@+id/cardViewMain"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="bottom">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnEdit"
+                    android:layout_width="130dp"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/bg_btn_voicetext"
+                    android:text="@string/edit_string"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="130dp"
+                    android:layout_height="55dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/bg_btn_voicetext"
+                    android:text="@string/next"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

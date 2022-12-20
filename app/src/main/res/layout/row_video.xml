@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/rlCross"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="12dp">
+
+        <ImageView
+            android:id="@+id/imgCross"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/demo"
+            android:layout_centerInParent="true"
+            android:visibility="visible" />
+        <ImageView
+            android:id="@+id/deleteIV"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="4dp"
+            android:src="@drawable/cross"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlAdd"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="12dp"
+        android:visibility="visible"
+        android:layout_toEndOf="@+id/rlCross"
+        android:background="@drawable/bg_activities_notes">
+        <ImageView
+            android:id="@+id/imgPlus"
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:src="@drawable/add"
+           android:layout_centerInParent="true"
+            android:layout_margin="12dp"/>
+
+    </RelativeLayout>
+</RelativeLayout>

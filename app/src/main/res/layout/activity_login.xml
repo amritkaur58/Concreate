@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="10dp">
+
+            <RelativeLayout
+                android:layout_width="120dp"
+                android:id="@+id/langRL"
+                android:layout_alignParentEnd="true"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/spLanguage"
+                    android:layout_width="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/downIV"
+                    android:text="@string/english_string"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_centerVertical="true"
+                    android:layout_height="14dp"
+                    android:id="@+id/downIV"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/downarrow"
+                    />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/imgUser"
+                android:layout_width="220dp"
+                android:layout_below="@+id/langRL"
+                android:layout_height="230dp"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="20dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/frame" />
+
+            <TextView
+                android:id="@+id/txtWelcomeBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgUser"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="10dp"
+                android:text="@string/welcomeback"
+                android:textColor="@android:color/black"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtSignInDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtWelcomeBack"
+                android:layout_centerHorizontal="true"
+                android:text="@string/signindetail"
+                android:textColor="@color/dark_grey"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+            <RelativeLayout
+                android:id="@+id/rlEmail"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@+id/txtSignInDetail"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/bg_email">
+
+                <TextView
+                    android:id="@+id/txtEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/email"
+                    android:textColor="@color/light_grey"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/txtEmail"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="25dp"
+                    android:paddingEnd="20dp"
+                    android:text=""
+                    android:imeOptions="actionDone"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlPassword"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@+id/rlEmail"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/bg_email">
+
+                <TextView
+                    android:id="@+id/txtPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/password"
+                    android:textColor="@color/light_grey"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/txtPassword"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:paddingStart="25dp"
+                    android:paddingEnd="20dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlRememberMe"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@+id/rlPassword"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <CheckBox
+                    android:id="@+id/checkBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:buttonTint="#EAEAEA"
+                    android:text="@string/remember_me"
+                    android:textColor="@android:color/black"
+                    android:textSize="13sp"
+                    android:textStyle="normal" />
+
+                <RelativeLayout
+                    android:id="@+id/rlLogins"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/bg_login">
+
+                    <TextView
+                        android:id="@+id/txtLogin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingStart="15dp"
+                        android:text="@string/login"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="5dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/txtLogin"
+                        android:src="@drawable/frontarrow" />
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/forgotTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlRememberMe"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="20dp"
+                android:text="@string/forgotpassword"
+                android:textColor="@color/red"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/versionTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/forgotTV"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/version_string"
+                android:textSize="16sp"/>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
